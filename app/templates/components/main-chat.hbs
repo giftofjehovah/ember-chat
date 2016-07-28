@@ -1,0 +1,19 @@
+<main class="panel panel-default {{hideOrShow}}">
+  <div class="panel-heading">
+    <form id="MessageForm" class="form-inline text-right">
+      <fieldset>
+        {{input type='text' value=newMsg placeholder='say what?' autocomplete='off' class='form-control' required='true' autofocus='true'}}
+        <button id="sendMessage" class="btn btn-success" {{action "sendMsg"}}>Send</button>
+      </fieldset>
+    </form>
+  </div>
+  <section class="panel-body">
+    <div class="text-center"><small id="connected">{{names}}</small></div>
+    <hr>
+    <div id="messages">
+      {{#each msg as |m|}}
+        {{single-chat className=m.className msg=m.msg text=m.text}}
+      {{/each}}
+    </div>
+  </section>
+</main>
