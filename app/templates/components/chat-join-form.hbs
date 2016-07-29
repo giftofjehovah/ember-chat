@@ -1,8 +1,8 @@
 <section id="join" class="well {{hideOrShow}}">
-  <form id="JoinForm" class="form-inline text-right" {{action "joinChat"}}>
+  <form id="JoinForm" class="form-inline text-right">
       <fieldset>
         {{input type='text' value=name key-press="checkForNull" placeholder='Your name' autocomplete='off' class='form-control' required=true autofocus='true'}}
-        <button id="sendJoin" class="btn btn-success" disabled={{enableOrNot}}>Join</button>
+        <button id="sendJoin" class="btn btn-success" {{action "joinChat"}} disabled={{enableOrNot}}>Join</button>
       </fieldset>
   </form>
 </section>

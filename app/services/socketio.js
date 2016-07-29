@@ -6,7 +6,7 @@ let socket
 
 export default Ember.Service.extend(Ember.Evented, {
   setUpSocket: function () {
-    socket = io('localhost:3000')
+    socket = io(window.location.host)
     this
       .connect()
       .disconnect()
@@ -58,7 +58,7 @@ export default Ember.Service.extend(Ember.Evented, {
   },
 
   left: function () {
-    socket.on('joined', (user) => {
+    socket.on('left', (user) => {
       console.log(user.name + ' left the chat.')
       this.trigger('left', user)
     })
